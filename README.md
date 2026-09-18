@@ -42,37 +42,27 @@ The dataset contains customer demographic information, account information, and 
 
 Examples of variables include:
 
-Gender
-
-SeniorCitizen
-
-Partner
-
-Dependents
-
-Tenure
-
-PhoneService
-
-InternetService
-
-Contract
-
-PaymentMethod
-
-MonthlyCharges
-
-TotalCharges
-
-Churn
+* Gender
+* SeniorCitizen
+* Partner
+* Dependents
+* Tenure
+* PhoneService
+* InternetService
+* Contract
+* PaymentMethod
+* MonthlyCharges
+* TotalCharges
+* Churn
 
 The dataset is stored in:
-
+```text
 data/Telco-Customer-Churn.csv
+```
 
 # 4. Machine Learning Workflow
 The project follows this workflow:
-
+```text
 Raw Dataset
      |
      v
@@ -107,32 +97,27 @@ Complete ML Pipeline
      |
      v
 Flask REST API
-
+```
 # 5. Data Preparation
 The dataset was inspected for:
 
-Data types
-
-Missing values
-
-Duplicate records
-
-Numerical variables
-
-Categorical variables
-
-Target distribution
+* Data types
+* Missing values
+* Duplicate records
+* Numerical variables
+* Categorical variables
+* Target distribution
 
 Categorical variables were converted into numerical representations using one-hot encoding.
 
 Numerical variables were handled using appropriate numerical preprocessing.
 
 The train/test split uses:
-
+```text
 Training data: 70%
 Testing data: 30%
 Random state: 42
-
+```
 Stratification was used to maintain the distribution of the target variable between the training and testing datasets.
 
 # 6. Feature Engineering
@@ -140,9 +125,9 @@ Three additional features were created.
 
 AverageMonthlySpend
 Calculated as:
-
+```text
 TotalCharges / tenure
-
+```
 For customers with zero tenure, MonthlyCharges is used instead.
 
 This feature provides an estimate of the customer's average monthly spending based on their total charges and tenure.
@@ -154,12 +139,12 @@ It provides an indication of the extent of the customer's relationship with the 
 
 TenureGroup
 Customers are grouped according to tenure:
-
+```text
 0–12 months       → New
 13–24 months      → Developing
 25–48 months      → Established
 49+ months        → Loyal
-
+```
 This allows the model to capture possible non-linear relationships between customer tenure and churn.
 
 # 7. Model Development
