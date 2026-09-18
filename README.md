@@ -1,4 +1,6 @@
 ### Customer Churn Prediction
+**GitHub Repository:** [Data Churner](https://github.com/goyalsushant/nagp-data-churner)
+
 # 1. Project Overview
 This project develops an end-to-end machine learning solution for predicting customer churn for a telecommunications company.
 
